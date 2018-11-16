@@ -38,17 +38,21 @@ div{
     height: 550px;
 }
 /* images */
+#img_hilda{
+  height: auto;
+  width: 320px;
+}
 #poke_big{
   height: 200px;
   width: 200px;
 }
 #hil_spr{
-  height: 150px;
-  width: 75px;
+  height: 100px;
+  width: 50px;
 }
 .img_spr{
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
 }
 #lop_spr :hover{
   /* height: auto;
