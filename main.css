@@ -1,0 +1,60 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* The header */
+#head_pic{
+  backgroun d-image: url(https://i.ytimg.com/vi/kGTjxmFvw-w/maxresdefault.jpg);
+  background-size: cover;
+  background-position: 0% 23%;
+}
+#div_head{
+  margin: 0px auto;
+}
+#pokeName{
+  text-align: center;
+  text-shadow: 1px 1px blue;
+}
+.head_group{
+  display: inline-block;
+}
+/* the image container */
+#div_img_container{
+  height: 550px;
+  width: auto;
+  background-size: cover;
+  background-image: url(http://images6.fanpop.com/image/photos/39600000/Cute-Pokemon-Wallpaper-cutest-pokemon-39649663-1920-1080.jpg);
+
+}
+/* pokemon container */
+div{
+  border: 1px dotted black;
+}
+#div_img{
+    display: inline-block;
+    margin: 0px 5.1%;
+    position: relative;
+    height: 550px;
+}
+/* images */
+#poke_big{
+  height: 200px;
+  width: 200px;
+}
+#hil_spr{
+  height: 150px;
+  width: 75px;
+}
+.img_spr{
+  height: 100px;
+  width: 100px;
+}
+#lop_spr :hover{
+  /* height: auto;
+  width: auto; */
+}
+/* Button */
+button{
+  /* background-color: #E786A4; */
+}
