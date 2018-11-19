@@ -2,96 +2,76 @@ console.log("People Please Be Cool");
 
 const myRequest = new Request('http://fizal.me/pokeapi/api/v2/id/25.json');
 class pokemon{
-  constructor(img, background){
+  constructor(img, background, secondImg, bio, color, hilda, model){
     this.img = img;
     this.background = background;
+    this.secondImg = secondImg;
+    this.bio = bio;
+    this.color = color;
+    this.hilda = hilda;
+    this.model = model
     // this.hp = hp;
     // this.attack = attack;
     // this.defense = defense;
     // this.abilities = abilities;
   }
-  pokemin(){
-
+  pokemon(element){
+    let sprites = document.getElementById(element);
+    let images = document.getElementById('poke_big');
+    let backgrounds = document.getElementById("div_img_container");
+    let header = document.getElementById('pokeName');
+    let hilda = document.getElementById('img_hilda');
+    let models = document.getElementById('model');
+    sprites.addEventListener("click", function(){
+      header.innerHTML = this.bio;
+      header.style.color = this.color;
+      images.src = this.img;
+      backgrounds.style.backgroundImage = this.background;
+      hilda.src = this.hilda;
+      models.src = this.model;
+      }.bind(this))
+    }
+    mouseover(){
+      let images = document.getElementById('poke_big');
+      images.addEventListener("mouseover", function(){
+          images.src = this.secondImg;
+      }.bind(this))
+    }
+    mouseout(){
+      let images = document.getElementById('poke_big');
+      images.addEventListener("mouseout", function(){
+        images.src = this.img;
+      }.bind(this))
+    }
   }
-}
 
-let header = document.getElementById("pokeName");
-let images = document.getElementById('poke_big');
-let backgrounds = document.getElementById("div_img_container");
-// where the poke info comes from
+
 axios.get('http://fizal.me/pokeapi/api/v2/name/lopunny.json')
   .then(function (response) {
-    let the = response.data.sprites.front_shiny;
-    console.log(response.data);
-    // variables
-    let sprites = document.getElementById('lop_spr');
-    let lopunny = new pokemon("lop.png", "url(lop_back.jpg)");
-      // Sprites effects
-          sprites.src= the;
-      // Sprite events
-          sprites.addEventListener("click", function(){
-            header.innerHTML = "Lopunny is a bipedal, rabbit-like Pokémon with a dark brown fur and a short, round tail."
-            header.style.color = "#B47C4B";
-            images.src = lopunny.img;
-      backgrounds.style.backgroundImage = lopunny.background;
-      //Big Pictures
-      document.getElementById('poke_big').addEventListener("mouseover", function(){
-        document.getElementById('poke_big').src = "lop_cute.jpg";
-          });
-      document.getElementById('poke_big').addEventListener("mouseout", function(){
-        document.getElementById('poke_big').src = 'lop.png';
-    });
+    let sprite = response.data.sprites.front_shiny;
+        document.getElementById('lop_spr').src = sprite;
+    let lopunny = new pokemon("lop.png", "url(lop_back.jpg)", "lop_cute.jpg","Lopunny is a bipedal, rabbit-like Pokémon with a dark brown fur and a short, round tail.","#B47C4B", "hildaLop.png", "https://sketchfab.com/models/2006be17ff744821938456b19fa4d071/embed");
+        lopunny.pokemon('lop_spr');
+        lopunny.mouseover();
+        lopunny.mouseout();
+
   });
-
-});
-
-
-
 axios.get('http://fizal.me/pokeapi/api/v2/name/gardevoir.json')
   .then(function (response) {
-        //variables
-    let the = response.data.sprites.front_shiny;
-    let sprite = document.getElementById('gra_spr');
-    // sprite
-      sprite.src = the;
-    // sprite events
-          sprite.addEventListener("click", function(){
-          header.innerHTML =  "Gardevoir is a bipedal, humanoid Pokémon whose body resembles a flowing gown."
-          header.style.color = "#9580BB";
-          let gardevoir = new pokemon("gra.png", "url(gra_back.png)");
-          images.src = gardevoir.img;
-          backgrounds.style.backgroundImage = gardevoir.background;
-
-          document.getElementById('poke_big').addEventListener("mouseover", function(){
-            document.getElementById('poke_big').src = "gra_cute.png";
-            });
-            document.getElementById('poke_big').addEventListener("mouseout", function(){
-              document.getElementById('poke_big').src = 'gra.png';
-            });
+    let sprite = response.data.sprites.front_shiny;
+        document.getElementById('gra_spr').src = sprite;
+    let gardevior = new pokemon("gra.png", "url(gra_back.png)","gra_cute.png", "Gardevoir is a bipedal, humanoid Pokémon whose body resembles a flowing gown.","#9580BB" ,"https://vignette.wikia.nocookie.net/in-birth/images/6/60/Story-hil16.png/revision/latest?cb=20180302192818", "https://sketchfab.com/models/5a5c85abbdc744d8b2cf8d5d184b339b/embed");
+        gardevior.pokemon('gra_spr');
+        gardevior.mouseover();
+        gardevior.mouseout();
   });
-});
-
 axios.get('http://fizal.me/pokeapi/api/v2/name/primarina.json')
   .then(function (response) {
     //variables
-let the = response.data.sprites.front_shiny;
-let sprite = document.getElementById('pri_spr');
-
-  sprite.src = the;
-//sprite events
-  sprite.addEventListener("click", function(){
-  header.innerHTML =  "Primarina is a marine Pokémon that resembles a cross between a sea lion and a mermaid.";
-  header.style.color = "#0078C0";
-  // class
-  let primarina = new pokemon("pri.png", "url(pri_back.jpg)");
-  images.src = primarina.img;
-  backgrounds.style.backgroundImage = primarina.background;
-// big pic changes
-  document.getElementById('poke_big').addEventListener("mouseover", function(){
-    document.getElementById('poke_big').src = "pri_cute.jpg";
-    });
-  document.getElementById('poke_big').addEventListener("mouseout", function(){
-    document.getElementById('poke_big').src = 'pri.png';
-    });
+    let sprite = response.data.sprites.front_shiny;
+        document.getElementById('pri_spr').src = sprite;
+    let primarina = new pokemon("pri.png", "url(pri_back.jpg)", "pri_cute.jpg", "Primarina is a marine Pokémon that resembles a cross between a sea lion and a mermaid. ", "#007BC1", "https://vignette.wikia.nocookie.net/in-birth/images/1/14/Story-hil28.png/revision/latest?cb=20180302192956", "https://sketchfab.com/models/69ccb0543f8e439583d621f28e62af6f/embed");
+        primarina.pokemon('pri_spr');
+        primarina.mouseover();
+        primarina.mouseout();
   });
-});
