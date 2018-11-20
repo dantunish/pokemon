@@ -15,6 +15,22 @@
 #div_hilda{
 
 }
+span{
+  color: #3A2C1C;
+  font-weight: bold;
+  animation-name: pop;
+  animation-duration:  1s;
+  animation-iteration-count: infinite;
+}
+@keyframes pop {
+  0%{
+    text-shadow: 3px 3px black;
+    color: #F9EBF9;
+  }
+  /* 100%{
+    background-color: blue;
+  } */
+}
 #hil_spr{
   height: 85px;
   width: 50px;
@@ -39,9 +55,7 @@
   color: white;
 }
 /* the image container */
-div{
-  border: 1px dotted black;
-}
+
 #div_img_container{
   height: auto;
   width: auto;
@@ -57,9 +71,15 @@ div{
     margin: 0px 5.1%;
 }
 #poke_big{
-  height: 200px;
-  width: 200px;
+  /* height: 200px;
+  width: 200px; */
 }
 .sketchfab-embed-wrapper{
   display: inline-block;
+}
+p{
+  text-shadow: 2px 2px gray;
+  font-weight: bold;
+  font-size: 25px;
+  color: #3A2C1C;
 }
