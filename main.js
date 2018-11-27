@@ -1,6 +1,6 @@
 console.log("People Please Be Cool");
 
-const myRequest = new Request('http://fizal.me/pokeapi/api/v2/id/25.json');
+const myRequest = new Request('https://fizal.me/pokeapi/api/v2/id/25.json');
 class Pokemon{
   constructor(img, background, secondImg, bio, color, hilda, model, hp, attack, defense, abilities, name){
     this.img = img;
@@ -68,7 +68,7 @@ class Pokemon{
   let hilda = new Pokemon("https://img.fireden.net/v/image/1513/46/1513462400863.png", "url(https://i.ytimg.com/vi/P5HhAeIt0vM/maxresdefault.jpg)", "https://66.media.tumblr.com/0ffdf33c65d5064d12b967828d90c392/tumblr_pe3b001DAz1sk3s93o1_500.png", "Hilda is one of the leaders and founders of Amnesia.", "#FDFAFD", "https://vignette.wikia.nocookie.net/in-birth/images/6/6c/Profile-hilda.png/revision/latest?cb=20140823164035", "","300", "900", "1000", "The EXS of Light and Darkness,<br> Paradox", "Hilda");
     hilda.display("img_second");
 
-axios.get('http://fizal.me/pokeapi/api/v2/name/lopunny.json')
+axios.get('https://fizal.me/pokeapi/api/v2/name/lopunny.json')
   .then(function (response) {
     console.log(response.data.species.name);
     let sprite = response.data.sprites.front_shiny;
@@ -77,7 +77,7 @@ axios.get('http://fizal.me/pokeapi/api/v2/name/lopunny.json')
         lopunny.display('lop_spr');
   });
 
-axios.get('http://fizal.me/pokeapi/api/v2/name/gardevoir.json')
+axios.get('https://fizal.me/pokeapi/api/v2/name/gardevoir.json')
   .then(function (response) {
     let sprite = response.data.sprites.front_shiny;
         document.getElementById('gra_spr').src = sprite;
@@ -85,7 +85,7 @@ axios.get('http://fizal.me/pokeapi/api/v2/name/gardevoir.json')
         gardevior.display('gra_spr');
   });
 
-axios.get('http://fizal.me/pokeapi/api/v2/name/primarina.json')
+axios.get('https://fizal.me/pokeapi/api/v2/name/primarina.json')
   .then(function (response) {
     let sprite = response.data.sprites.front_shiny;
         document.getElementById('pri_spr').src = sprite;
