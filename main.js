@@ -90,7 +90,7 @@ axios.get('https://fizal.me/pokeapi/api/v2/name/gardevoir.json')
         document.getElementById('gra_spr').src = sprite;
         let gardevior = new Pokemon("gra.png", "url(gra_back.png)","gra_cute.png", "Gardevoir is a bipedal, humanoid Pokémon whose body resembles a flowing gown.","#A3CA9A" ,"https://vignette.wikia.nocookie.net/in-birth/images/6/60/Story-hil16.png/revision/latest?cb=20180302192818", "https://sketchfab.com/models/5a5c85abbdc744d8b2cf8d5d184b339b/embed?autostart=1",response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.abilities[0].ability.name, response.data.species.name);
         gardevior.display('gra_spr');
-        Hilda.pokemon.push(gardevior);\
+        Hilda.pokemon.push(gardevior);
   });
 
 axios.get('https://fizal.me/pokeapi/api/v2/name/primarina.json')
