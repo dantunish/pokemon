@@ -52,18 +52,20 @@ class Pokemon{
       }.bind(this))
     }
 }
-// class Trainer{
-//   constructor(){
-//     this.pokemon = [];
-//   }
-//   all(){
-//     return this.pokemon;
-//   }
-//   get(name){
-//     for(i=0, i < )
-//   }
-// }
-  // let gym = new Trainer();
+class Trainer{
+  constructor(){
+    this.pokemon = [];
+  }
+  all(name){
+    return this.pokemon;
+    for(let i = 0; i < this.pokemon.length; i++){
+      if(name === this.pokemon[i].name){
+        return this.pokemon[i];
+      }
+    }
+  }
+}
+  let Hilda = new Trainer();
 
   let hilda = new Pokemon("https://img.fireden.net/v/image/1513/46/1513462400863.png", "url(https://i.ytimg.com/vi/P5HhAeIt0vM/maxresdefault.jpg)", "https://66.media.tumblr.com/0ffdf33c65d5064d12b967828d90c392/tumblr_pe3b001DAz1sk3s93o1_500.png", "Hilda is one of the leaders and founders of Amnesia.", "#FDFAFD", "https://vignette.wikia.nocookie.net/in-birth/images/6/6c/Profile-hilda.png/revision/latest?cb=20140823164035", "","300", "900", "1000", "The EXS of Light and Darkness,<br> Paradox", "Hilda");
     hilda.display("img_second");
@@ -72,9 +74,14 @@ axios.get('https://fizal.me/pokeapi/api/v2/name/lopunny.json')
   .then(function (response) {
     console.log(response.data.species.name);
     let sprite = response.data.sprites.front_shiny;
+      for (var i = 0; i < response.data.abilities.length; i++) {
+        let results= response.data.abilities[i].ability.name;
+        console.log("Abilities: ", results);
+      }
     let lopunny = new Pokemon("lop.png", "url(lop_back.jpg)", "lop_cute.jpg","Lopunny is a bipedal, rabbit-like Pokémon with a dark brown fur and a short, round tail.","#EEDDA5", "hildaLop.png", "https://sketchfab.com/models/2006be17ff744821938456b19fa4d071/embed?autostart=1",response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.abilities[0].ability.name, response.data.species.name);
     document.getElementById('lop_spr').src = sprite;
         lopunny.display('lop_spr');
+        Hilda.pokemon.push(lopunny);
   });
 
 axios.get('https://fizal.me/pokeapi/api/v2/name/gardevoir.json')
@@ -83,6 +90,7 @@ axios.get('https://fizal.me/pokeapi/api/v2/name/gardevoir.json')
         document.getElementById('gra_spr').src = sprite;
         let gardevior = new Pokemon("gra.png", "url(gra_back.png)","gra_cute.png", "Gardevoir is a bipedal, humanoid Pokémon whose body resembles a flowing gown.","#A3CA9A" ,"https://vignette.wikia.nocookie.net/in-birth/images/6/60/Story-hil16.png/revision/latest?cb=20180302192818", "https://sketchfab.com/models/5a5c85abbdc744d8b2cf8d5d184b339b/embed?autostart=1",response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.abilities[0].ability.name, response.data.species.name);
         gardevior.display('gra_spr');
+        Hilda.pokemon.push(gardevior);\
   });
 
 axios.get('https://fizal.me/pokeapi/api/v2/name/primarina.json')
@@ -91,4 +99,5 @@ axios.get('https://fizal.me/pokeapi/api/v2/name/primarina.json')
         document.getElementById('pri_spr').src = sprite;
     let primarina = new Pokemon("pri.png", "url(pri_back.jpg)", "pri_cute.jpg", "Primarina is a marine Pokémon that resembles a cross between a sea lion and a mermaid. ", "#EAA6B1", "https://vignette.wikia.nocookie.net/in-birth/images/1/14/Story-hil28.png/revision/latest?cb=20180302192956", "https://sketchfab.com/models/69ccb0543f8e439583d621f28e62af6f/embed?autostart=1", response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.abilities[0].ability.name, response.data.species.name);
         primarina.display('pri_spr');
+        Hilda.pokemon.push(primarina);
   });
